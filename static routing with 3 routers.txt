@@ -1,0 +1,44 @@
+****PUNE ROUTER ALL COMMANDS****
+Router>en
+Router#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Router(config)#hostname Pune
+Pune(config)#int fa0/0
+Pune(config-if)#ip add 192.168.1.1 255.255.255.0
+Pune(config-if)#no sh
+
+Pune(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/0, changed state to up
+%LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/0, changed state to up
+
+Pune(config-if)#exit
+Pune(config)#exit
+Pune#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Pune#wr
+Building configuration...
+[OK]
+Pune#
+Pune#en
+Pune#configure terminal 
+Enter configuration commands, one per line.  End with CNTL/Z.
+Pune(config)#int fa0/1
+Pune(config-if)#ip add 192.168.4.1 255.255.255.0
+Pune(config-if)#no sh
+
+Pune(config-if)#
+%LINK-5-CHANGED: Interface FastEthernet0/1, changed state to up
+
+Pune(config-if)#exit
+Pune(config)#exit
+Pune#wr
+______________________________________________________________
+
+FOR IP ROUTING (ROUTING unknown addresses)
+PUNE ROUTER
+Pune(config)#ip route 192.168.2.0 255.255.255.0 192.168.4.2
+Pune(config)#ip route 192.168.3.0 255.255.255.0 192.168.4.2
+Pune(config)#ip route 192.168.5.0 255.255.255.0 192.168.4.2
+Pune(config)#exit
+Pune#wr
